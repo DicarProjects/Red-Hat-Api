@@ -1,5 +1,5 @@
 import express from 'express';
-import { runFormRecordProcess } from '../controllers/form';
+import { runFormRecordProcess } from '../controllers/formController';
 
 const router = express.Router();
 

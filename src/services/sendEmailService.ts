@@ -13,13 +13,13 @@ const transporter = nodemailer.createTransport({
   authMethod: 'LOGIN',
 });
 
-export const sendEmail = async ({ name, email, subject, comment }: FormData) => {
+export const sendEmail = async ({ name, email, subject, comment}: FormData) => {
     try {
       console.log("este es el correo:",process.env.HOST_EMAIL);
       const htmlContent = processEmailTemplate({name, email, subject, comment});
 
       const options = {
-        from: `"RedHat" <${process.env.HOST_EMAIL}>`,
+        from: `"RHIT Solutions Notifications" <${process.env.HOST_EMAIL}>`,
         to: process.env.RECIPIENT_EMAIL,
         subject: EMAIL_SUBJECT,
         html: htmlContent,
