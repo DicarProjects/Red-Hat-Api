@@ -16,6 +16,7 @@ RUN npm install --legacy-peer-deps
 # Install necessary libraries
 RUN npm install nodemailer
 RUN npm install validator
+RUN npm install cors
 
 # Copy the rest of the files to the working directory
 COPY . .

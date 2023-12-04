@@ -15,7 +15,6 @@ const transporter = nodemailer.createTransport({
 
 export const sendEmail = async ({ name, email, subject, comment}: FormData) => {
     try {
-      console.log("este es el correo:",process.env.HOST_EMAIL);
       const htmlContent = processEmailTemplate({name, email, subject, comment});
 
       const options = {
