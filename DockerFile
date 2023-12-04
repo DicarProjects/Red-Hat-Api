@@ -14,7 +14,8 @@ COPY package*.json ./
 RUN npm install --legacy-peer-deps
 
 # Install necessary libraries
-RUN npm install nodemailer validator
+RUN npm install nodemailer
+RUN npm install validator
 
 # Copy the rest of the files to the working directory
 COPY . .
@@ -22,8 +23,8 @@ COPY . .
 # Run the npm run build command - copy the template.html file to the dist folder
 RUN npm run build
 
-# Expose port 8080 (o el puerto que utilices en tu aplicación)
-EXPOSE 8080
+# Expose port 8080
+EXPOSE 3000
 
 # Comando para iniciar la aplicación Node.js
 CMD ["npm", "start"]
