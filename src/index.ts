@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.json());
 
-const PORT = 3000;
+const PORT = process.env.PORT || 8080;
 
 // Use the routes defined in the routes/index.ts file under the prefix /api
 app.use('/api', routes);

@@ -22,5 +22,8 @@ COPY . .
 # Run the npm run build command - copy the template.html file to the dist folder
 RUN npm run build
 
-# Command to start the Node.js application
+# Expose port 8080 (o el puerto que utilices en tu aplicación)
+EXPOSE 8080
+
+# Comando para iniciar la aplicación Node.js
 CMD ["npm", "start"]
