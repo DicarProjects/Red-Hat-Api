@@ -4,11 +4,17 @@ FROM node:18.18.2
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
+# Eliminar el directorio node_modules si existe
+RUN rm -rf node_modules
+
 # Copy package.json and package-lock.json files
 COPY package*.json ./
 
 # Install dependencies with the --legacy-peer-deps flag
 RUN npm install --legacy-peer-deps
+
+# Install necessary libraries
+RUN npm install nodemailer validator
 
 # Copy the rest of the files to the working directory
 COPY . .
